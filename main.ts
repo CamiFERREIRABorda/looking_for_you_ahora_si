@@ -2109,6 +2109,7 @@ let PREMIO3: Sprite = null
 let direccion = 0
 let Caminar = 0
 let Prima_Nº1: Sprite = null
+Nivel_1()
 scene.setBackgroundColor(9)
 effects.clouds.startScreenEffect()
 Prima_Nº1 = sprites.create(img`
@@ -2509,7 +2510,6 @@ Prima_Nº1.setPosition(20, 0)
 music.powerUp.play()
 direccion = 1
 Prima_Nº1.setFlag(SpriteFlag.ShowPhysics, true)
-Nivel_3()
 game.onUpdate(function () {
     if (Prima_Nº1.tileKindAt(TileDirection.Bottom, myTiles.tile120) || Prima_Nº1.tileKindAt(TileDirection.Bottom, myTiles.tile121)) {
         info.changeLifeBy(-3)
