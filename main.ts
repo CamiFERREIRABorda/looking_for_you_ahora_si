@@ -21,6 +21,7 @@ namespace SpriteKind {
     export const premio2 = SpriteKind.create()
     export const premio3 = SpriteKind.create()
     export const Premio_1 = SpriteKind.create()
+    export const EnemyWoman = SpriteKind.create()
 }
 function Nivel_3 () {
     game.splash("Nivel 3")
@@ -168,40 +169,6 @@ function Nivel_3 () {
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `, [myTiles.transparency16,myTiles.tile35,myTiles.tile37,myTiles.tile69,myTiles.tile71,myTiles.tile67,myTiles.tile72,myTiles.tile20,myTiles.tile23,myTiles.tile26,myTiles.tile14,myTiles.tile39,myTiles.tile41,myTiles.tile44,myTiles.tile50,myTiles.tile55,myTiles.tile75,myTiles.tile76,myTiles.tile77,sprites.castle.rock1,sprites.builtin.oceanDepths4,myTiles.tile80,myTiles.tile81,myTiles.tile82,myTiles.tile83,myTiles.tile84,myTiles.tile85,myTiles.tile86,myTiles.tile88,myTiles.tile89,myTiles.tile90,myTiles.tile91,myTiles.tile92,myTiles.tile93,myTiles.tile94,myTiles.tile95,myTiles.tile97,myTiles.tile98,myTiles.tile99,myTiles.tile103,myTiles.tile24,myTiles.tile32,myTiles.tile42,myTiles.tile53,myTiles.tile79,myTiles.tile96,myTiles.tile104,myTiles.tile105,myTiles.tile106,myTiles.tile107,myTiles.tile109,myTiles.tile110,myTiles.tile111,myTiles.tile112,myTiles.tile113,myTiles.tile114,myTiles.tile118,myTiles.tile119], TileScale.Sixteen))
-    PREMIO3 = sprites.create(img`
-        . . . . . . . . . . . . . . . . . . . . . . b b b . . . . . . . 
-        . . . . . . . . . . . . . . . . . . . . b b 3 3 3 b . . . . . . 
-        . . . . . . . . . . . . . . . . . b b b 3 3 3 d 3 3 b . . . . . 
-        . . . . . . . . . . . . . . . . b b 3 3 3 3 3 3 d 3 a . . . . . 
-        . . . . . . . . . . . . . . b b 3 3 3 3 2 e e e e d b a . . . . 
-        . . . . . . . . . . . . b b b 3 3 3 3 2 3 e e e 2 e 3 a . . . . 
-        . . . . . . . . . . b b d 3 3 3 3 3 3 e 2 2 2 2 2 e d 3 a . . . 
-        . . . . . . . b b b d d 3 3 3 3 3 3 3 e 2 2 2 2 2 e d d a . . . 
-        . . . . . . b b 3 d 3 3 3 3 3 3 3 3 3 b e 2 2 2 e b 3 d 3 a . . 
-        . . . b b b 3 d d 3 3 3 3 3 3 3 3 3 3 3 b e e e b 3 3 d 3 a . . 
-        . . b 3 d d d 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 d d a . . 
-        b b d d d 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 d d 3 a . 
-        b 3 3 d d d d d d 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 d 3 a . 
-        b b 3 3 3 3 3 3 3 d d d d d 3 3 3 3 3 3 3 3 3 3 3 3 3 3 d d a . 
-        b b b b b b b 3 3 3 d d 3 3 d d d d d d d d d d 3 3 3 3 d d b a 
-        b 5 5 5 5 3 b b b b b b 3 3 3 3 d d 3 3 3 3 3 d d d 3 3 d d 3 a 
-        b 5 5 5 5 5 5 5 5 5 5 5 3 b b b b b b b b 3 3 3 3 3 d d d d 3 a 
-        b d 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 d d d b a a a a a b 3 d 3 b a 
-        b b 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 d d d d d d d b b 3 3 b a 
-        b 3 b b 3 5 5 5 5 5 5 5 5 5 5 d 5 5 5 5 d 5 5 d d d d d b b b a 
-        b 3 3 3 3 3 b b b 3 5 5 d d 5 5 5 5 5 d 5 5 5 d d d d d d b b a 
-        b 5 5 5 5 d 3 3 3 3 3 3 b b b 3 5 d d d d d d 5 5 d d d d b b a 
-        b 5 d 5 5 5 d d 5 5 5 3 3 3 3 b b b b b 3 d d d d d d d d b 3 a 
-        b 5 d 5 5 5 5 5 5 5 5 5 5 5 5 d d 3 3 3 3 b b b b b b 3 d b 3 a 
-        b d 5 d 5 5 5 5 5 5 d 5 5 5 5 5 d d 5 5 5 d d b b b b b b b 3 a 
-        b b b 5 5 d d 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 d d d d d d b b 3 a 
-        . . . b b b b d d 5 5 5 d d d 5 5 5 5 d d d d d d d d d d b 3 a 
-        . . . . . . . b b b b 5 5 5 5 5 5 d 5 d d d 5 d d d d d d b 3 a 
-        . . . . . . . . . . . b b b b 5 5 5 5 5 5 5 5 5 5 5 d d 5 3 3 a 
-        . . . . . . . . . . . . . . . b b b b d d d 5 d 5 5 d 5 b 3 b a 
-        . . . . . . . . . . . . . . . . . . . b b b b d d d d b 3 b a . 
-        . . . . . . . . . . . . . . . . . . . . . . . b b b a a a a . . 
-        `, SpriteKind.premio3)
     Enemigo3 = sprites.create(img`
         . . . . . . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -252,7 +219,6 @@ function Nivel_3 () {
         `, SpriteKind.Food)
     Prima_Nº1.setPosition(15, 0)
     paleta_de_pintura.setPosition(721, 52)
-    PREMIO3.setPosition(924, 104)
     Enemigo3.vy = 60
     Enemigo3.setFlag(SpriteFlag.BounceOnWall, true)
     info.startCountdown(40)
@@ -1110,10 +1076,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         Prima_Nº1.vy = -150
     }
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.premio3, function (sprite, otherSprite) {
-    info.stopCountdown()
-    game.over(true, effects.confetti)
-})
 controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
     animation.setAction(Prima_Nº1, ActionKind.Parada)
 })
@@ -1188,7 +1150,7 @@ function createPrima2 () {
         . . . . . . . . . . . . . . . . f f c e e c c c c f f f b f f f c e e c c c c f f c c c f . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . f f f c f f f f f f f f c f f f f c f f f f f f f f f f f . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . . f f f f f f f f f f f f f . f f f f f f f f f f f f f f . . . . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Food)
+        `, SpriteKind.Premio_Final)
     prima2Derecha = animation.createAnimation(ActionKind.prima2Derecha, Prima2TiempoCaminar)
     prima2Izquierda = animation.createAnimation(ActionKind.prima2Izquierda, Prima2TiempoCaminar)
     prima2Idle = animation.createAnimation(ActionKind.prima2Idle, Prima2TiempoCaminar)
@@ -1678,16 +1640,52 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Premio_1, function (sprite, othe
         1 f f f f f f f f f f f f f f 1 
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
         `)
-    game.showLongText("Keysi ayudame estoy secuestrada, estoy en un lugar muy oscuro salvame!!!", DialogLayout.Bottom)
+    game.showLongText("Keysi ayudame estoy secuestrada, estoy en un lugar muy oscuro salvame!!!", DialogLayout.Top)
     Nivel_2()
 })
 info.onCountdownEnd(function () {
     game.over(false)
     music.wawawawaa.play()
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.EnemyWoman, function (sprite, otherSprite) {
+    if (EnemyWomanLife == 0) {
+        sprite.destroy()
+        otherSprite.destroy()
+    } else {
+        sprite.destroy()
+        EnemyWomanLife += -1
+        otherSprite.say("jaja nunca me detendras")
+    }
+    music.wawawawaa.play()
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.setAction(Prima_Nº1, ActionKind.Derecha)
     direccion = 1
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Premio_Final, function (sprite, otherSprite) {
+    info.stopCountdown()
+    game.setDialogTextColor(0)
+    game.setDialogFrame(img`
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 f f f f f f f f f f f f f f 1 
+        1 f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 
+        1 f f f f f f f f f f f f f f 1 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        `)
+    game.showLongText("Mary que bueno que estas bien te extrañe muchisimo", DialogLayout.Top)
+    game.showLongText("Siempre juntas a la distancia nada ni nadie nos podra separar", DialogLayout.Top)
+    game.over(true, effects.confetti)
 })
 function Nivel_2 () {
     game.splash("Nivel 2")
@@ -1863,6 +1861,7 @@ function Nivel_2 () {
     info.startCountdown(40)
 }
 function crearEnemyWoman () {
+    EnemyWomanLife = 3
     enemyWoman1 = sprites.create(img`
         . . . . . . . . . . . . . . f f c 9 9 6 6 6 6 6 6 6 6 c c f f f f . . . . . . . . . . . . . 
         . . . . . . . . . . . f f c 6 6 9 9 9 9 6 6 6 6 b b c c c c c c c f f . . . . . . . . . . . 
@@ -1910,7 +1909,7 @@ function crearEnemyWoman () {
         . . . . . . . . . . . . . . . f c c c c c c c c f f f . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . f c c c c c f f f c f . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . . f c c c f . . f f f . . . . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Enemy)
+        `, SpriteKind.EnemyWoman)
     enemyWomanAnimate = animation.createAnimation(ActionKind.womanEnemyWalking, 100)
     enemyWomanAnimate.addAnimationFrame(img`
         . . . . . . . . . . . . . . f f c 9 9 6 6 6 6 6 6 6 6 c c f f f f . . . . . . . . . . . . . 
@@ -2062,11 +2061,16 @@ function crearEnemyWoman () {
     enemyWoman1.y = 50
     enemyWomanX = womanEnemyLimiteX
     directionWoman = 1
-    enemyWoman1.ay = 300
+    enemyWoman1.ay = 210
     enemyWoman1.setFlag(SpriteFlag.BounceOnWall, true)
     enemyWoman1.vx = -80
     animation.setAction(enemyWoman1, ActionKind.womanEnemyWalking)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyWoman, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    Prima_Nº1.setPosition(15, 0)
+    music.wawawawaa.play()
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
     music.baDing.play()
@@ -2076,7 +2080,27 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.premio2, function (sprite, other
     otherSprite.destroy()
     Enemigo2.destroy()
     info.stopCountdown()
-    otherSprite.say("")
+    game.setDialogTextColor(0)
+    game.setDialogFrame(img`
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 f f f f f f f f f f f f f f 1 
+        1 f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 
+        1 f f f f f f f f f f f f f f 1 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        `)
+    game.showLongText("Calle 273 Surrey", DialogLayout.Top)
+    game.showLongText("Otra pista de Mery, esa debe ser la direccion de donde se encuentra hmmm...", DialogLayout.Top)
     Nivel_3()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -2098,6 +2122,7 @@ let bate: Sprite = null
 let balon: Sprite = null
 let Enemigo2: Sprite = null
 let PREMIO2: Sprite = null
+let EnemyWomanLife = 0
 let prima2Jumping: animation.Animation = null
 let prima2Escalar: animation.Animation = null
 let prima2Idle: animation.Animation = null
@@ -2115,7 +2140,6 @@ let prima2Direccion = 0
 let Projectil: Sprite = null
 let paleta_de_pintura: Sprite = null
 let Enemigo3: Sprite = null
-let PREMIO3: Sprite = null
 let direccion = 0
 let Caminar = 0
 let Prima_Nº1: Sprite = null
