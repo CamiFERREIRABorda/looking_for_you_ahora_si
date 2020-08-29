@@ -22,7 +22,6 @@ namespace SpriteKind {
     export const premio3 = SpriteKind.create()
     export const Premio_1 = SpriteKind.create()
     export const EnemyWoman = SpriteKind.create()
-    export const lapiz = SpriteKind.create()
 }
 function Nivel_3 () {
     game.splash("Nivel 3")
@@ -226,12 +225,6 @@ function Nivel_3 () {
     crearEnemyWoman()
     createPrima2()
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.lapiz, function (sprite, otherSprite) {
-    game.showLongText("ohhh que bonitos recuerdos", DialogLayout.Top)
-    otherSprite.destroy()
-    music.baDing.play()
-    info.changeScoreBy(1)
-})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (direccion == 1) {
         Projectil = sprites.createProjectileFromSprite(img`
@@ -1028,7 +1021,7 @@ function Nivel_1 () {
         `, SpriteKind.Enemy)
     enemigo.setVelocity(-145, 0)
     enemigo.setPosition(1160, 40)
-    lapiz2 = sprites.create(img`
+    lapiz = sprites.create(img`
         . . . . . . . . . . . . . . . f . . . . . . 
         . . . . . . . . . . . . . . f 3 f . . . . . 
         . . . . . . . . . . . . . f 3 3 3 f . . . . 
@@ -1051,7 +1044,7 @@ function Nivel_1 () {
         f f f f 4 4 4 d f . . . . . . . . . . . . . 
         f f f f f 4 4 f . . . . . . . . . . . . . . 
         f f f f f f f . . . . . . . . . . . . . . . 
-        `, SpriteKind.lapiz)
+        `, SpriteKind.Food)
     microfono = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -1073,7 +1066,7 @@ function Nivel_1 () {
         . . . . . . f d d f . . . . . . 
         . . . . . . f f f f . . . . . . 
         `, SpriteKind.Food)
-    lapiz2.setPosition(155, 88)
+    lapiz.setPosition(155, 88)
     PREMIO12.setPosition(1231, 266)
     microfono.setPosition(449, 266)
     info.startCountdown(40)
@@ -1655,13 +1648,13 @@ info.onCountdownEnd(function () {
     music.wawawawaa.play()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.EnemyWoman, function (sprite, otherSprite) {
-    EnemyWomanLife += -1
     if (EnemyWomanLife == 0) {
         sprite.destroy()
         otherSprite.destroy()
     } else {
         sprite.destroy()
-        otherSprite.say("jaja")
+        EnemyWomanLife += -1
+        otherSprite.say("jaja nunca me detendras")
     }
     music.wawawawaa.play()
 })
@@ -1692,7 +1685,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Premio_Final, function (sprite, 
         `)
     game.showLongText("Mary que bueno que estas bien te extrañe muchisimo", DialogLayout.Top)
     game.showLongText("Siempre juntas a la distancia nada ni nadie nos podra separar", DialogLayout.Top)
-    music.stopAllSounds()
     game.over(true, effects.confetti)
 })
 function Nivel_2 () {
@@ -2138,7 +2130,7 @@ let prima2Izquierda: animation.Animation = null
 let prima2Derecha: animation.Animation = null
 let Prima2TiempoCaminar = 0
 let microfono: Sprite = null
-let lapiz2: Sprite = null
+let lapiz: Sprite = null
 let enemigo: Sprite = null
 let PREMIO12: Sprite = null
 let prima2Limite = 0
