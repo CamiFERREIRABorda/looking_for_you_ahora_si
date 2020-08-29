@@ -22,6 +22,7 @@ namespace SpriteKind {
     export const premio3 = SpriteKind.create()
     export const Premio_1 = SpriteKind.create()
     export const EnemyWoman = SpriteKind.create()
+    export const lapiz = SpriteKind.create()
 }
 function Nivel_3 () {
     game.splash("Nivel 3")
@@ -225,6 +226,12 @@ function Nivel_3 () {
     crearEnemyWoman()
     createPrima2()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.lapiz, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    game.showLongText("Hmmm.... recuerdo aquella vez que dibujamos por primera vez juntas :(", DialogLayout.Top)
+    music.baDing.play()
+    info.changeScoreBy(1)
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (direccion == 1) {
         Projectil = sprites.createProjectileFromSprite(img`
@@ -1044,7 +1051,7 @@ function Nivel_1 () {
         f f f f 4 4 4 d f . . . . . . . . . . . . . 
         f f f f f 4 4 f . . . . . . . . . . . . . . 
         f f f f f f f . . . . . . . . . . . . . . . 
-        `, SpriteKind.Food)
+        `, SpriteKind.lapiz)
     microfono = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -1686,6 +1693,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Premio_Final, function (sprite, 
     game.showLongText("Mary que bueno que estas bien te extrañe muchisimo", DialogLayout.Top)
     game.showLongText("Siempre juntas a la distancia nada ni nadie nos podra separar", DialogLayout.Top)
     game.over(true, effects.confetti)
+    music.stopAllSounds()
 })
 function Nivel_2 () {
     game.splash("Nivel 2")
