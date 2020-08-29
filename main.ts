@@ -442,7 +442,7 @@ function Nivel_1 () {
         f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
         `)
     scene.setBackgroundColor(15)
-    game.setDialogTextColor(1)
+    game.setDialogTextColor(0)
     game.setDialogFrame(img`
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
         1 f f f f f f f f f f f f f f 1 
@@ -1111,6 +1111,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.premio3, function (sprite, otherSprite) {
+    info.stopCountdown()
     game.over(true, effects.confetti)
 })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
@@ -1657,6 +1658,27 @@ function createPrima2 () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Premio_1, function (sprite, otherSprite) {
     otherSprite.destroy()
     enemigo.destroy()
+    info.stopCountdown()
+    game.setDialogTextColor(0)
+    game.setDialogFrame(img`
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 f f f f f f f f f f f f f f 1 
+        1 f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 f f f f f f f f f f 1 f 1 
+        1 f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 
+        1 f f f f f f f f f f f f f f 1 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        `)
+    game.showLongText("Keysi ayudame estoy secuestrada, estoy en un lugar muy oscuro salvame!!!", DialogLayout.Bottom)
     Nivel_2()
 })
 info.onCountdownEnd(function () {
@@ -1722,38 +1744,24 @@ function Nivel_2 () {
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `, [myTiles.transparency16,myTiles.tile2,myTiles.tile31,myTiles.tile32,myTiles.tile33,myTiles.tile36,myTiles.tile26,myTiles.tile25,myTiles.tile37,myTiles.tile39,myTiles.tile50,myTiles.tile51,myTiles.tile34,myTiles.tile35,myTiles.tile38,myTiles.tile41,myTiles.tile43,myTiles.tile52,myTiles.tile40,myTiles.tile42,myTiles.tile53,myTiles.tile56,myTiles.tile22,myTiles.tile14,myTiles.tile54,myTiles.tile55,myTiles.tile57,myTiles.tile60,myTiles.tile66,myTiles.tile67,myTiles.tile68], TileScale.Sixteen))
     PREMIO2 = sprites.create(img`
-        . . . . . . . . . . . . . . e e e e e e e . . . . . . . . . . . 
-        . . . . . . . . . . . . e e 4 5 5 6 6 2 e 2 e . . . . . . . . . 
-        . . . . . . . . . . e e 4 5 5 5 6 7 2 3 e 2 6 8 8 . . . . . . . 
-        . . . . . . . . . e 4 6 7 7 6 6 7 7 2 3 2 e 7 7 7 6 6 8 . . . . 
-        . . . . . . . . e 4 6 7 4 5 5 5 4 7 7 2 2 2 7 7 7 6 7 7 8 . . . 
-        . . . . . . . 4 4 4 8 7 4 4 4 4 4 7 7 7 7 6 6 7 7 7 6 7 8 . . . 
-        . . . . . . 4 5 2 2 e 7 7 7 7 7 7 6 7 7 7 7 6 6 6 7 6 6 6 8 . . 
-        . . . . . 4 5 2 3 2 2 7 7 6 6 7 2 2 e 6 6 6 e e e e e 8 8 8 . . 
-        . . . . 4 5 5 2 3 2 e 7 6 6 7 2 3 2 2 e 4 5 5 5 d d d d 4 8 . . 
-        . . . 4 4 5 6 7 7 7 7 5 5 4 6 2 3 e 4 5 5 d d d d d d d d d 4 . 
-        . . . e 6 6 7 7 4 5 5 4 4 7 7 e 4 5 5 d d d d 5 5 5 5 4 d d 4 4 
-        . . e 4 6 7 7 7 4 4 4 6 7 7 e 5 5 d d 5 5 5 5 5 d 5 5 d d d d 4 
-        . . e 5 6 6 8 6 7 7 6 6 6 e 5 d d 5 5 5 5 5 5 5 5 5 5 5 5 d d e 
-        . e 4 5 5 4 4 e 8 7 7 6 e 5 d 5 5 5 5 5 4 5 5 5 5 5 5 5 5 5 d e 
-        . e 5 5 4 e e e e 6 6 e 5 d 5 5 5 5 d 5 5 5 5 5 d d d d 5 4 d e 
-        . e 5 5 e e 4 4 f e e 5 d 5 d 5 5 5 5 5 5 d 5 d 5 d d d d d d e 
-        e 4 5 4 e e e e f e 4 5 d 5 5 5 5 5 5 5 5 5 5 5 d d 4 d d d e . 
-        e 5 e 4 e e f f f e 5 d 5 5 5 5 5 5 5 5 d 5 5 5 5 d d d d e . . 
-        e 5 e e 4 e e f f 4 5 d 5 5 5 5 5 5 5 5 5 5 5 5 d d d d e . . . 
-        e 5 e e e e f f e 5 d 5 5 d 5 5 5 d 5 5 5 5 d 5 d d d e . . . . 
-        e 5 f f e f e e e 5 d 5 5 5 4 5 5 5 5 5 5 5 d d d 4 e . . . . . 
-        e 5 f f f f f f e 5 4 5 5 5 5 5 5 5 d 5 d 4 d d e e . . . . . . 
-        e 5 4 e f e f f 4 5 d 5 5 d 5 5 5 5 5 d d d d e . . . . . . . . 
-        e 5 e e e f f e 5 d d 5 5 5 5 5 4 5 d d d e e . . . . . . . . . 
-        e 4 e e e f f f 5 d 5 5 5 5 d 5 5 d d d e . . . . . . . . . . . 
-        e 4 e f e f f f 5 d 5 d 5 5 5 5 5 d 4 e . . . . . . . . . . . . 
-        . e 4 e f f f e 5 d 5 5 5 5 5 5 d e e . . . . . . . . . . . . . 
-        . e 5 4 e e e e 5 d 5 4 5 d d 4 e . . . . . . . . . . . . . . . 
-        . . e 5 5 4 e e 5 d d d d d e e . . . . . . . . . . . . . . . . 
-        . . . e e 5 5 4 4 d d d e e . . . . . . . . . . . . . . . . . . 
-        . . . . . e e e e e e e . . . . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f . . . . . . . . 
+        . . . . . . f f d d f . . . . . . . 
+        . . . . . f d f d d d f . . . . . . 
+        . . . . f d d f d d d d f . . . . . 
+        . . . f d d d f d d d d d f . . . . 
+        . . f d d d d f d d d d d d f . . . 
+        . f 3 d d d d f 3 3 d d d d d f . . 
+        f 3 3 d d d d f 2 2 3 d d d d 3 f . 
+        f 3 3 3 d d d d 2 2 2 3 d d d 3 3 f 
+        f 3 3 3 3 d d d 2 2 2 3 3 3 3 3 3 f 
+        . f 3 3 3 3 d 3 3 3 f f f f f f f f 
+        . . f 3 3 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . . . f 3 3 3 3 3 3 3 3 3 3 3 f . . 
+        . . . . f 3 3 3 3 3 3 3 3 3 f . . . 
+        . . . . . f 3 3 3 3 3 3 3 f . . . . 
+        . . . . . . f 3 3 3 3 3 f . . . . . 
+        . . . . . . . f 3 3 3 f . . . . . . 
+        . . . . . . . . f f f . . . . . . . 
         `, SpriteKind.premio2)
     Enemigo2 = sprites.create(img`
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -2067,6 +2075,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 sprites.onOverlap(SpriteKind.Player, SpriteKind.premio2, function (sprite, otherSprite) {
     otherSprite.destroy()
     Enemigo2.destroy()
+    info.stopCountdown()
+    otherSprite.say("")
     Nivel_3()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
