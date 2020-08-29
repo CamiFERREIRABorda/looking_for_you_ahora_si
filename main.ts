@@ -1648,13 +1648,13 @@ info.onCountdownEnd(function () {
     music.wawawawaa.play()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.EnemyWoman, function (sprite, otherSprite) {
-    EnemyWomanLife += -1
     if (EnemyWomanLife == 0) {
         sprite.destroy()
         otherSprite.destroy()
     } else {
         sprite.destroy()
-        otherSprite.say("jaja")
+        EnemyWomanLife += -1
+        otherSprite.say("jaja nunca me detendras")
     }
     music.wawawawaa.play()
 })
@@ -1686,7 +1686,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Premio_Final, function (sprite, 
     game.showLongText("Mary que bueno que estas bien te extrañe muchisimo", DialogLayout.Top)
     game.showLongText("Siempre juntas a la distancia nada ni nadie nos podra separar", DialogLayout.Top)
     game.over(true, effects.confetti)
-    music.stopAllSounds()
 })
 function Nivel_2 () {
     game.splash("Nivel 2")
