@@ -1648,12 +1648,12 @@ info.onCountdownEnd(function () {
     music.wawawawaa.play()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.EnemyWoman, function (sprite, otherSprite) {
+    EnemyWomanLife += -1
     if (EnemyWomanLife == 0) {
         sprite.destroy()
         otherSprite.destroy()
     } else {
         sprite.destroy()
-        EnemyWomanLife += -1
         otherSprite.say("jaja nunca me detendras")
     }
     music.wawawawaa.play()
